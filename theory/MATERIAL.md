@@ -1,0 +1,9 @@
+- [ ] Raspberry Pi with WiFi
+- [ ] SD-card for Raspberry Pi
+- [ ] RGB LED
+- [ ] 3 MOSFETS (1 per color channel)
+- [ ] Power Resistors
+- [ ] Button for display activation
+- [ ] Display
+- [ ] Heat sink für LED
+- [ ] Case
