@@ -1,9 +1,17 @@
-- [ ] Raspberry Pi with WiFi
-- [ ] SD-card for Raspberry Pi
-- [ ] RGB LED
+- [ ] Raspberry Pi with WiFi: [CHF 14.86](https://www.digikey.ch/product-detail/de/raspberry-pi/SC0510/2648-SC0510-ND/15298147)
+- [ ] Raspberry Pi Power supply: [CHF 7.93](https://www.digikey.ch/product-detail/de/raspberry-pi/RPI-USB-C-POWER-SUPPLY-BLACK-EU/1690-RPIUSB-CPOWERSUPPLYBLACKEU-ND/10258762)
+- [ ] SD-card for Raspberry Pi: [CHF 9.09](https://www.digikey.ch/product-detail/de/delkin-devices-inc/USDCOEM-16GB/3247-USDCOEM-16GB-ND/13882332)
+- [ ] RGB LED: [CHF 9.02](https://www.digikey.ch/product-detail/de/lumex-opto-components-inc/SML-LX1610RGBW-A/67-2074-ND/1994191)
 - [ ] 3 MOSFETS (1 per color channel)
 - [ ] Power Resistors
 - [ ] Button for display activation
-- [ ] Display
+- [ ] I2C Display [CHF 5.45](https://www.digikey.ch/product-detail/de/seeed-technology-co-ltd/104020208/1597-104020208-ND/10667534)
 - [ ] Heat sink für LED
 - [ ] Case
+- [ ] Wires
+- [ ] Prototype Board [CHF 2.48](https://www.digikey.ch/product-detail/en/adafruit-industries-llc/4784/1528-4784-ND/13617526)
+- [ ] Speaker (USB powered) [CHF 15.90](https://www.digitec.ch/de/s1/product/speedlink-twoxo-pc-lautsprecher-5920467)
+- [ ] Soldering iron [CHF 24.10](https://www.digitec.ch/de/s1/product/velleman-regelbare-loetstation-loetgeraet-5778964)
+- [ ] Desoldering braid [CHF 2.12](https://www.digikey.ch/product-detail/en/aven-tools/17540/243-1185-ND/1992579)
+- [ ] Tin [CHF 19.50](https://www.digikey.ch/product-detail/en/chip-quik-inc/RASWLF-031-4OZ/RASWLF-0314OZ-ND/9682001)
+
