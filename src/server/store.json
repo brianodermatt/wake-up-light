@@ -1,0 +1,37 @@
+{
+  "monday": {
+    "active": true,
+    "time": "06:00",
+    "duration": 30
+  },
+  "tuesday": {
+    "active": true,
+    "time": "06:00",
+    "duration": 30
+  },
+  "wednesday": {
+    "active": true,
+    "time": "06:00",
+    "duration": 30
+  },
+  "thursday": {
+    "active": true,
+    "time": "06:00",
+    "duration": 30
+  },
+  "friday": {
+    "active": true,
+    "time": "06:00",
+    "duration": 30
+  },
+  "saturday": {
+    "active": false,
+    "time": "08:30",
+    "duration": 30
+  },
+  "sunday": {
+    "active": false,
+    "time": "08:30",
+    "duration": 30
+  }
+}
