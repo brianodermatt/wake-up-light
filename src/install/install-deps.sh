@@ -9,7 +9,7 @@ sudo apt install git -y
 
 # Install Python and some Python packages
 sudo apt install python3-setuptools -y
-sudo apt install python3-flask python3-crontab python3-rpi.gpio -y
+sudo apt install python3-flask python3-crontab python3-rpi.gpio python3-numpy python3-scipy -y
 
 # Install pigpio for LED PWM and enable the daemon. https://github.com/joan2937/pigpio
 sudo apt-get update -y

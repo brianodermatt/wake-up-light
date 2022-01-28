@@ -47,7 +47,7 @@
             id="{{ day }}-active"
             class="form-check-input mt-0"
             type="checkbox"
-            value="{{ store[day].active }}"
+            {% if store[day].active==true %}checked{% endif %}
             autocomplete="off"
             aria-label="Checkbox for activating {{ day }}"
           >
@@ -79,6 +79,7 @@
           autocomplete="off"
           aria-label="Duration for {{ day }}"
         >
+          <option value=1 {% if store[day].duration==1 %}selected{% endif %}>1m</option>
           <option value=15 {% if store[day].duration==15 %}selected{% endif %}>15m</option>
           <option value=30 {% if store[day].duration==30 %}selected{% endif %}>30m</option>
           <option value=45 {% if store[day].duration==45 %}selected{% endif %}>45m</option>
