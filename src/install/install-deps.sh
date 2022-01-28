@@ -18,3 +18,37 @@ wget https://raw.githubusercontent.com/joan2937/pigpio/master/util/pigpiod.servi
 sudo cp pigpiod.service /etc/systemd/system
 sudo systemctl enable pigpiod.service
 sudo systemctl start pigpiod.service
+
+# Make script executable
+sudo chmod +x wake-up-light/src/server/main.py wake-up-light/src/server/lights.py
+
+# Register autostart
+sudo bash -c "cat >/etc/systemd/system/app.service" <<'EOF'
+[Unit]
+Description=Flask app
+After=network.target
+
+[Service]
+ExecStart=/home/pi/wake-up-light/src/server/main.py
+WorkingDirectory=/home/pi/wake-up-light/src/server
+Restart=on-failure
+RemainAfterExit=yes
+
+[Install]
+WantedBy=multi-user.target
+EOF
+
+sudo bash -c "cat >/etc/systemd/system/app.service" <<'EOF'
+[Unit]
+Description=Pigpio daemon
+
+[Service]
+ExecStart=/usr/local/bin/pigpiod
+WorkingDirectory=/home/pi/wake-up-light/src/server
+Restart=on-failure
+RemainAfterExit=yes
+
+[Install]
+WantedBy=multi-user.target
+EOF
+sudo systemctl enable app pigpio

@@ -34,11 +34,12 @@ Use Raspberry Pi Imager to install Raspbian (used: Raspberry Pi Imager v1.6.2).
 
 ## Installation
 - Clone this repo on the Raspberry: `git clone https://github.com/brianodermatt/wake-up-light -b master`
-- Install the needed software. This upgrades the system, installs python, some python packages, as well as [pigpio](https://github.com/joan2937/pigpio) for LED PWM. This may take several minutes.
-    ```bash
-    chmod +x wake-up-light/src/install/install-deps.sh
-    ./wake-up-light/src/install/install-deps.sh
-    ```
+- Install the needed software. This upgrades the system, installs python, some python packages, as well as [pigpio](https://github.com/joan2937/pigpio) for LED PWM. It will furthermore set the needed permissions and register the server for starting upon boot. The execution of this script may take several minutes.
+  ```bash
+  chmod +x wake-up-light/src/install/install-deps.sh
+  ./wake-up-light/src/install/install-deps.sh
+  ```
+
 
 ## Disable system LEDs
 <!--(TODO)-->
@@ -50,15 +51,3 @@ Add the following lines to `/boot/config.txt`:
 dtparam=act_led_trigger=none
 dtparam=act_led_activelow=on
 ```
-
-### Troubleshooting
-- Try a different cardreader / adapter
-- `lsblk` displays all the available devices with their size. The SD could be something like `sdf` with partitions `sdf1` and `sdf2`.
-- `gparted` shows partitions on device
-- mount one of the partitions to a folder created by `sudo mkdir /media/$USER/SD`: `sudo mount -t vfat /dev/sdf1 /media/$USER/SD`
-- list scheduled cron jobs: `sudo crontab -l`
-- access logs of crontab jobs (crontab needs a Mail Transfer Agent which is not installed on Ubuntu by default): 
-  ```bash
-  sudo apt-get install postfix
-  sudo tail -f /var/mail/root
-  ```
