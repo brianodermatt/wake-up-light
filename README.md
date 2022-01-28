@@ -14,6 +14,10 @@ sudo apt update
 sudo apt install --install-recommends kicad -y
 ```
 
+### Useful documents
+- [Raspberry Pi R1/R2 GPIO pinout](datasheets/raspberrypi_R1_R2_gpio_pinout.png)
+- [Resistor color code](datasheets/resistor_color_code.png)
+
 ### LED driver
 #### Calculations
 Single BJT NPN with grounded emitter, base connected to GPIO via 10k resistance, collector connected to 5V (`V_DD`) via LED and resistor `R_L`.
