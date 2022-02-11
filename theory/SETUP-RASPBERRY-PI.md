@@ -11,7 +11,7 @@ Use Raspberry Pi Imager to install Raspbian (used: Raspberry Pi Imager v1.6.2).
 - Press `CTRL+SHIFT+x` to open advanced options.
 - Set hostname: `wakeup`.local
 - Enable SSH, set a password and write it down.
-- ~~Configure WiFi with SSID, password, country~~
+- Configure WiFi with SSID, password, country.
 
 ## Startup
 - Insert SD card into Raspberry Pi, connect Ethernet, connect power.
@@ -33,13 +33,14 @@ Use Raspberry Pi Imager to install Raspbian (used: Raspberry Pi Imager v1.6.2).
 - Quit the config tool. When asked to reboot, allow.
 
 ## Installation
-- Clone this repo on the Raspberry: `git clone https://github.com/brianodermatt/wake-up-light -b master`
+- Install git: `sudo apt install git -y`
+- Clone this repo on the Raspberry: `git clone https://github.com/brianodermatt/wake-up-light -b main`
 - Install the needed software. This upgrades the system, installs python, some python packages, as well as [pigpio](https://github.com/joan2937/pigpio) for LED PWM. It will furthermore set the needed permissions and register the server for starting upon boot. The execution of this script may take several minutes.
   ```bash
   chmod +x wake-up-light/src/install/install-deps.sh
   ./wake-up-light/src/install/install-deps.sh
   ```
-
+- Reboot: `sudo reboot`
 
 ## Disable system LEDs
 <!--(TODO)-->
