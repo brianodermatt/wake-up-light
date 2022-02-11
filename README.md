@@ -16,6 +16,7 @@ sudo apt install --install-recommends kicad -y
 
 ### Useful documents
 - [Raspberry Pi R1/R2 GPIO pinout](datasheets/raspberrypi_R1_R2_gpio_pinout.png)
+- [Raspberry Pi Zero 2W GPIO pinout](datasheets/RaspberryPi_zero_2_w_gpio_pinout.webp)
 - [Resistor color code](datasheets/resistor_color_code.png)
 
 ### LED driver
