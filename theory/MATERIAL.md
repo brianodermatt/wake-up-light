@@ -4,10 +4,8 @@
 - [x] Adapter USB-C -> micro-USB: [CHF 0.79](https://www.aliexpress.com/item/1005001355311385.html?spm=a2g0o.productlist.0.0.40436da1rq7a0F&algo_pvid=ef8f1738-f886-478b-941f-e5b598a3ded5&algo_exp_id=ef8f1738-f886-478b-941f-e5b598a3ded5-0&pdp_ext_f=%7B%22sku_id%22%3A%2212000015793579873%22%7D)
 - [x] SD-card for Raspberry Pi: [CHF 9.09](https://www.digikey.ch/product-detail/de/delkin-devices-inc/USDCOEM-16GB/3247-USDCOEM-16GB-ND/13882332)
 - [x] RGB LED: [CHF 3.91](https://www.digikey.ch/en/products/detail/adafruit-industries-llc/2524/9770537)
-- [ ] BJT: _____ (available in-house)
+- [x] BJT NPN: S9013 (available in-house)
 - [x] Power Resistors [>10pcs: CHF 0.06](https://www.digikey.ch/de/products/detail/stackpole-electronics-inc/CF12JT2R40/1741072)
-- [x] Button for display activation [CHF 0.10](https://www.digikey.ch/de/products/detail/apem-inc/MJTP1230/1798037)
-- [x] I2C Display [CHF 5.45](https://www.digikey.ch/product-detail/de/seeed-technology-co-ltd/104020208/1597-104020208-ND/10667534)
 - [x] Heat sink for LED [CHF 0.93](https://www.digikey.ch/en/products/detail/watterott-electronic-gmbh/20188/10071165)
 - [ ] Case
 - [x] Wires
@@ -18,8 +16,11 @@
         - [x] Yellow [CHF 0.74](https://www.digikey.ch/de/products/detail/adafruit-industries-llc/2004/6827151)
         - [x] Red [CHF 0.74](https://www.digikey.ch/de/products/detail/adafruit-industries-llc/2001/6827148)
         - [x] White [CHF 0.74](https://www.digikey.ch/de/products/detail/adafruit-industries-llc/2006/6827153)
-    - Fabrication Wire High Current [CHF 1.26 / m](https://www.digikey.ch/de/products/detail/te-connectivity-raychem-cable-protection/RL0111-1-00-9/13590770)
 - [x] Prototype Board [CHF 2.48](https://www.digikey.ch/product-detail/en/adafruit-industries-llc/4784/1528-4784-ND/13617526)
+
+For possible additional features (not used in V1):
+- [x] Button for display activation [CHF 0.10](https://www.digikey.ch/de/products/detail/apem-inc/MJTP1230/1798037)
+- [x] I2C Display [CHF 5.45](https://www.digikey.ch/product-detail/de/seeed-technology-co-ltd/104020208/1597-104020208-ND/10667534)
 - [ ] Speaker (USB powered) [CHF 15.90](https://www.digitec.ch/de/s1/product/speedlink-twoxo-pc-lautsprecher-5920467)
 
 # Tools
