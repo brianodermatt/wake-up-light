@@ -1,0 +1,12 @@
+{
+  "python.pythonPath": "${workspaceFolder}/src/.venv/bin/python3",
+  "python.envFile": "${workspaceFolder}/src/.env",
+  "python.linting.pylintEnabled": true,
+  "python.linting.pylintArgs": [
+    "--indent-string='  '"
+  ],
+  "python.formatting.provider": "autopep8",
+  "python.formatting.autopep8Args": [
+    "--indent-size=2"
+  ]
+}

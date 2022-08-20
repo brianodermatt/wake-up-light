@@ -33,5 +33,6 @@
     "active": false,
     "time": "08:30",
     "duration": 30
-  }
+  },
+  "hold": 0
 }

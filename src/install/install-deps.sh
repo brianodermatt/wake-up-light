@@ -1,29 +1,34 @@
 #!/bin/bash
-DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
+SRC_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )/.." >/dev/null 2>&1 && pwd )"
+echo "SRC_DIR:" $SRC_DIR
 
 # Upgrade all packages of the system
+echo "--> Upgrade all packages of the system"
 sudo apt update
 sudo apt upgrade -y
 
-# Install git
-sudo apt install git -y
-
-# Install Python and some Python packages
-sudo apt install python3-setuptools -y
-sudo apt install python3-flask python3-crontab python3-rpi.gpio python3-numpy python3-scipy python3-pigpio -y
+# Install pip and pipenv dependency management
+echo "--> Install pip and pipenv dependency management"
+sudo apt install python3-pip pipenv python3-venv -y
+cd $SRC_DIR
+python3 -m venv .venv
+source $SRC_DIR/.venv/bin/activate
+pipenv install
 
 # Install pigpio for LED PWM and enable the daemon. https://github.com/joan2937/pigpio
-sudo apt-get update -y
+echo "--> Install pigpio for LED PWM and enable the daemon. https://github.com/joan2937/pigpio"
 sudo apt-get install pigpio -y
-wget https://raw.githubusercontent.com/joan2937/pigpio/master/util/pigpiod.service -O $DIR/../../../pigpiod.service
-sudo cp $DIR/../../../pigpiod.service /etc/systemd/system
+wget https://raw.githubusercontent.com/joan2937/pigpio/master/util/pigpiod.service -O $SRC_DIR/../../pigpiod.service
+sudo cp $SRC_DIR/../../pigpiod.service /etc/systemd/system
 sudo systemctl enable pigpiod.service
 sudo systemctl start pigpiod.service
 
 # Make script executable
-sudo chmod +x $DIR/../server/main.py $DIR/../server/lights.py
+echo "--> Make script executable"
+sudo chmod +x $SRC_DIR/server/main.py $SRC_DIR/server/lights.py
 
 # Register autostart
+echo "--> Register autostart"
 sudo bash -c "cat >/etc/systemd/system/app.service" <<'EOF'
 [Unit]
 Description=Flask app

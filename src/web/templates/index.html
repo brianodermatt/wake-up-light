@@ -15,15 +15,14 @@
   <div class="container">
     <h1>Wake-up light</h1>
 
+    <!-- Start Time -->
+    <h2>Start Time</h2>
+    <p class="text-muted">The sunrise starts at the specified time and is completed the specified number of minutes
+      afterwards.</p>
+
     <div class="row p-1">
-      <button
-        onclick="save();"
-        class="col text-nowrap m-2 btn btn-outline-success"
-      >Save</button>
-      <button
-        onclick="fillWorkingDays()"
-        class="col text-nowrap m-2 btn btn-outline-secondary"
-      >
+      <button onclick="save();" class="col text-nowrap m-2 btn btn-outline-success">Save</button>
+      <button onclick="fillWorkingDays()" class="col text-nowrap m-2 btn btn-outline-secondary">
         <span class="bi-clipboard"></span>
         <span>Mo</span>
         <span class="bi-arrow-bar-right"></span>
@@ -32,94 +31,54 @@
     </div>
 
     {% for day in DAYS %}
-      <!-- {{ day }} -->
-      <label
-        class="text-capitalize"
-        for="{{ day }}-active"
-      >{{ day }}</label>
-      <div
-        id="day-container-{{ day }}"
-        class="input-group mb-3 day-container"
-      >
-        <!-- Activate -->
-        <div class="input-group-text">
-          <input
-            id="{{ day }}-active"
-            class="form-check-input mt-0"
-            type="checkbox"
-            {% if store[day].active==true %}checked{% endif %}
-            autocomplete="off"
-            aria-label="Checkbox for activating {{ day }}"
-          >
-        </div>
-        <!-- Wake-up time -->
-        <label
-          class="input-group-text bi-clock"
-          for="{{ day }}-time"
-        ></label>
-        <input
-          id="{{ day }}-time"
-          class="form-control"
-          type="time"
-          value="{{ store[day].time }}"
-          step="60"
-          required
-          autocomplete="off"
-          aria-label="Wakeup Time for {{ day }}"
-        >
-        <!-- Duration -->
-        <label
-          class="input-group-text bi-hourglass"
-          for="{{ day }}-duration"
-        ></label>
-        <select
-          id="{{ day }}-duration"
-          class="form-select"
-          required
-          autocomplete="off"
-          aria-label="Duration for {{ day }}"
-        >
-          <option value=1 {% if store[day].duration==1 %}selected{% endif %}>1m</option>
-          <option value=15 {% if store[day].duration==15 %}selected{% endif %}>15m</option>
-          <option value=30 {% if store[day].duration==30 %}selected{% endif %}>30m</option>
-          <option value=45 {% if store[day].duration==45 %}selected{% endif %}>45m</option>
-          <option value=60 {% if store[day].duration==60 %}selected{% endif %}>60m</option>
-        </select>
+    <!-- {{ day }} -->
+    <label class="text-capitalize" for="{{ day }}-active">{{ day }}</label>
+    <div id="day-container-{{ day }}" class="input-group mb-3 day-container">
+      <!-- Activate -->
+      <div class="input-group-text">
+        <input id="{{ day }}-active" class="form-check-input mt-0" type="checkbox" {% if store[day].active==true
+          %}checked{% endif %} autocomplete="off" aria-label="Checkbox for activating {{ day }}">
       </div>
+      <!-- Wake-up time -->
+      <label class="input-group-text bi-clock" for="{{ day }}-time"></label>
+      <input id="{{ day }}-time" class="form-control" type="time" value="{{ store[day].time }}" step="60" required
+        autocomplete="off" aria-label="Wakeup Time for {{ day }}">
+      <!-- Duration -->
+      <label class="input-group-text bi-hourglass" for="{{ day }}-duration"></label>
+      <select id="{{ day }}-duration" class="form-select" required autocomplete="off"
+        aria-label="Duration for {{ day }}">
+        <option value=1 {% if store[day].duration==1 %}selected{% endif %}>1m</option>
+        <option value=15 {% if store[day].duration==15 %}selected{% endif %}>15m</option>
+        <option value=30 {% if store[day].duration==30 %}selected{% endif %}>30m</option>
+        <option value=45 {% if store[day].duration==45 %}selected{% endif %}>45m</option>
+        <option value=60 {% if store[day].duration==60 %}selected{% endif %}>60m</option>
+      </select>
+    </div>
     {% endfor %}
+
+    <!-- Hold time -->
+    <h2 class="mt-4">Hold Time</h2>
+    <p class="text-muted">After the sunrise is completed, the light stays on for the specified number of minutes</p>
+    <select id="hold-time-select" class="form-select" form-select>
+      <option value=0 {% if store.hold==1 %}selected{% endif %}>0m</option>
+      <option value=20 {% if store.hold==1 %}selected{% endif %}>20m</option>
+      <option value=30 {% if store.hold==1 %}selected{% endif %}>30m</option>
+    </select>
   </div>
 
   <!-- Toasts -->
-  <div
-    class="toast-container position-fixed top-0 start-50 translate-middle-x p-2"
-    aria-live="polite"
-    aria-atomic="true"
-    class="position-relative"
-  >
+  <div class="toast-container position-fixed top-0 start-50 translate-middle-x p-2" aria-live="polite"
+    aria-atomic="true" class="position-relative">
     <!-- Saved successfully -->
-    <div
-      id="toast-save-success"
-      class="toast border-success"
-      role="alert"
-      data-bs-autohide="true"
-      data-bs-delay="3000"
-      aria-live="assertive"
-      aria-atomic="true"
-    >
+    <div id="toast-save-success" class="toast border-success" role="alert" data-bs-autohide="true" data-bs-delay="3000"
+      aria-live="assertive" aria-atomic="true">
       <div class="toast-header bg-success text-white">Success</div>
       <div class="toast-body">Saved successfully</div>
     </div>
 
     <!-- Error -->
-    <div
-      id="toast-error"
-      class="toast border-danger"
-      role="alert"
-      data-bs-autohide="true"
-      data-bs-delay="3000"
-      aria-live="assertive"
-      aria-atomic="true"
-    >
+    <div id="toast-error" class="toast border-danger" role="alert" data-bs-autohide="true" data-bs-delay="3000"
+      aria-live="assertive" aria-atomic="true">
       <div class="toast-header bg-danger text-white">Error</div>
       <div class="toast-body custom-content">An error occured</div>
     </div>
