@@ -58,3 +58,15 @@ RemainAfterExit=yes
 WantedBy=multi-user.target
 EOF
 sudo systemctl enable app pigpio
+
+# Turn off system LED
+sudo sed -i '$ d' /etc/rc.local
+sudo bash -c "cat >/etc/rc.local" <<'EOF'
+# Disable the ACT LED on the Pi Zero.
+echo none | sudo tee /sys/class/leds/led0/trigger
+echo 0 | sudo tee /sys/class/leds/led0/brightness
+
+exit 0
+EOF
+
+
