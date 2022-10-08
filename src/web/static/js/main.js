@@ -18,7 +18,7 @@ async function save() {
         }));
 
         // hold time
-        const holdTimeSelect = document.querySelector('#hold-time-select');
+        const holdTimeSelect = document.querySelector('#hold-time-input');
         const holdTime = holdTimeSelect.value;
         dayData.hold = Number(holdTime);
 

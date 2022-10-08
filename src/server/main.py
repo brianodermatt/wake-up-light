@@ -23,9 +23,8 @@ def index():
     print(store)
     return render_template("index.html", store=store, DAYS=DAYS)
 
+
 # API: Update the timing
-
-
 @app.route("/api/update", methods=["POST"])
 def update():
     print("Updating")
